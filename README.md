@@ -7,7 +7,6 @@
 </p>
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-<img src="https://img.shields.io/badge/LangGraph-AI%20Agents-purple?style=for-the-badge" />
 <img src="https://img.shields.io/badge/DuckDB-Database-orange?style=for-the-badge" />
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
@@ -277,96 +276,26 @@ cd InsightDB
 
 # 2. Backend Setup
 
-
-Navigate to project folder:
-
-
 ```powershell
 cd E:\InsightDB
+.\.venv\Scripts\Activate.ps1
+$env:POSTGRES_ENABLED="false"
+python -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-
-Create virtual environment:
-
-
-```powershell
-python -m venv .venv
-```
-
-
-Install Python dependencies:
-
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
-
-
----
 
 # 3. Frontend Setup
 
 
-Navigate to frontend:
-
-
 ```powershell
-cd frontend
-```
-
-
-Install packages:
-
-
-```powershell
-npm install
-```
-
-
-Return to root directory:
-
-
-```powershell
-cd ..
+cd E:\InsightDB\frontend
+npm run dev
 ```
 
 
 ---
 
-# 4. Start InsightDB
 
-
-Run the development script:
-
-
-```powershell
-.\start-dev.ps1
-```
-
-
-The script starts both frontend and backend services.
-
-
----
-
-# 🌐 Application URLs
-
-
-Frontend:
-
-```
-http://localhost:5173
-```
-
-
-Backend API:
-
-```
-http://localhost:8000
-```
-
-
----
 
 # ▶️ Usage
 
@@ -397,9 +326,3 @@ http://localhost:8000
 
 
 ---
-
-<div align="center">
-
-⭐ If you like InsightDB, consider giving this repository a star!
-
-</div>
