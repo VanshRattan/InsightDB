@@ -15,73 +15,78 @@
 
 </div>
 
+
 <br />
 
 
 # 📌 Overview
 
-InsightDB is an AI-powered conversational analytics platform that enables users to analyze CSV datasets using natural language.
+**InsightDB** is an AI-powered conversational analytics platform that enables users to analyze CSV datasets using natural language.
 
-Instead of manually writing SQL queries or Python scripts, users can simply ask questions like:
+Instead of manually writing SQL queries or Python scripts, users can simply ask questions such as:
 
 - "Show monthly sales trends"
 - "Find the top customers by revenue"
 - "Detect unusual sales values"
 - "Compare sales performance by region"
 
-InsightDB understands the user's query, performs the required analysis, generates visualizations, and provides explainable results with generated SQL/Python code.
+InsightDB understands user intent, performs the required analysis, generates visualizations, and provides explainable results with generated SQL/Python code.
 
 
 ---
 
-# 🤖 How InsightDB Works
+# 🤖 AI Agent Workflow
+
+
+InsightDB uses a **LangGraph-based multi-agent architecture** where different AI agents handle different stages of analysis.
 
 
 ```
-User Question
+                User Question
 
-      ↓
+                      ↓
 
-Supervisor Agent
+              Supervisor Agent
 
-      ↓
+                      ↓
 
-Planning Agent
+              Planning Agent
 
-      ↓
+                      ↓
 
-SQL / Python Analysis Agent
+          SQL / Python Analysis Agent
 
-      ↓
+                      ↓
 
-Validator Agent
+              Validator Agent
 
-      ↓
+                      ↓
 
-Visualization Generator
+          Visualization Generator
 
-      ↓
+                      ↓
 
-Report Generation
+             Report Generation
 
-      ↓
+                      ↓
 
-Final Response
+              Final Response
 ```
 
 
-InsightDB uses a **LangGraph-based multi-agent architecture** where each AI agent performs a specialized task:
+### Agent Responsibilities
 
-| Agent | Responsibility |
+
+| Agent | Purpose |
 |---|---|
-| Supervisor Agent | Routes user queries |
+| Supervisor Agent | Determines the required analysis workflow |
 | Schema Profiler | Understands dataset structure |
 | Planner Agent | Creates analysis strategy |
 | Code Generator | Generates SQL/Python code |
 | Sandbox Executor | Executes analysis securely |
-| Validator | Checks results |
-| Visualization Agent | Creates charts |
-| Report Agent | Generates final reports |
+| Validator Agent | Checks results and errors |
+| Visualization Agent | Creates interactive charts |
+| Report Agent | Generates analytical reports |
 
 
 ---
@@ -89,43 +94,100 @@ InsightDB uses a **LangGraph-based multi-agent architecture** where each AI agen
 # ✨ Key Features
 
 
-- 📂 **CSV Dataset Analysis** — Upload datasets and automatically detect columns, data types, and statistics
+## 📂 CSV Dataset Analysis
 
-- 🤖 **AI-Powered Analytics** — Ask questions in natural language instead of writing SQL or Python
+- Upload CSV datasets
+- Automatic dataset profiling
+- Detect columns and data types
+- Analyze dataset statistics
+- Execute fast analytical queries using DuckDB
 
-- 🧠 **Multi-Agent Workflow** — Uses LangGraph agents for planning, execution, validation, and reporting
 
-- 📊 **Automatic Visualizations** — Generates interactive charts including:
-  - Line charts
-  - Bar charts
-  - Scatter plots
-  - Histograms
-  - Box plots
+---
 
-- 🔍 **Explainable Results** — View:
-  - Generated SQL queries
-  - Generated Python code
-  - Execution results
-  - Validation status
+## 🤖 Natural Language Data Analysis
 
-- 💬 **Conversational Memory** — Supports follow-up questions using previous analysis context
+Users can ask questions instead of writing code.
+
+Example:
+
+```
+Show monthly revenue trends
+```
+
+InsightDB automatically:
+
+- Understands the question
+- Creates an analysis plan
+- Generates SQL/Python code
+- Executes the analysis
+- Returns insights
+
+
+---
+
+## 📊 Automatic Visualization
+
+InsightDB automatically generates suitable charts:
+
+- Line charts for trends
+- Bar charts for comparisons
+- Scatter plots for relationships
+- Histograms for distributions
+- Box plots for outlier detection
+
+
+---
+
+## 🔍 Explainable AI Results
+
+Users can inspect:
+
+- Generated SQL queries
+- Generated Python code
+- Execution results
+- Validation status
+- Analysis workflow
+
+
+This makes the generated insights transparent and reproducible.
+
+
+---
+
+## 💬 Conversational Memory
+
+InsightDB supports follow-up questions using session context.
+
 
 Example:
 
 ```
 User:
-Show top 10 customers by revenue
+Show top 10 customers by sales
+
+
+InsightDB:
+Displays top 10 customers
+
 
 User:
 Show only top 3
 ```
 
-The system understands the previous request and updates the analysis.
+The system understands the previous conversation and updates the analysis.
 
 
-- 📑 **Automated Reports** — Generates structured reports containing insights, tables, charts, and recommendations
+---
 
-- 🔐 **Safe Code Execution** — Executes generated Python analysis with validation, timeout, and resource limits
+## 🔐 Safe Code Execution
+
+Generated Python analysis is executed with:
+
+- Validation checks
+- Execution limits
+- Error handling
+- Retry mechanism
 
 
 ---
@@ -133,14 +195,27 @@ The system understands the previous request and updates the analysis.
 # 🛠️ Tech Stack
 
 
-| Layer | Technologies |
+## Frontend
+
+| Technology | Purpose |
 |---|---|
-| Frontend | React, TypeScript, Vite, Tailwind CSS |
-| Backend | Python |
-| AI Framework | LangGraph |
-| Database | DuckDB, PostgreSQL (Optional) |
-| Data Processing | Pandas, NumPy |
-| Visualization | Plotly |
+| React | User Interface |
+| TypeScript | Type Safety |
+| Vite | Frontend Build Tool |
+| Tailwind CSS | Styling |
+| Plotly | Data Visualization |
+
+
+## Backend
+
+| Technology | Purpose |
+|---|---|
+| Python | Backend Processing |
+| LangGraph | AI Agent Orchestration |
+| DuckDB | Analytical Database |
+| Pandas | Data Processing |
+| NumPy | Numerical Analysis |
+| PostgreSQL | Persistent Storage (Optional) |
 
 
 ---
@@ -163,7 +238,9 @@ InsightDB
 │   ├── execution
 │   └── reports
 │
-├── assets
+├── requirements.txt
+│
+├── start-dev.ps1
 │
 └── README.md
 ```
@@ -174,7 +251,19 @@ InsightDB
 # 🚀 How To Run
 
 
-## 1. Clone Repository
+## Prerequisites
+
+Make sure you have installed:
+
+- Python 3.10+
+- Node.js 18+
+- npm
+- Git
+
+
+---
+
+# 1. Clone Repository
 
 
 ```bash
@@ -186,60 +275,91 @@ cd InsightDB
 
 ---
 
-# ⚙️ Backend Setup
+# 2. Backend Setup
 
 
-Navigate to backend:
+Navigate to project folder:
 
-```bash
-cd backend
+
+```powershell
+cd E:\InsightDB
 ```
 
 
 Create virtual environment:
 
 
-### Windows
-
-```bash
-python -m venv venv
-
-venv\Scripts\activate
+```powershell
+python -m venv .venv
 ```
 
 
-### Linux / macOS
+Install Python dependencies:
 
-```bash
-python3 -m venv venv
 
-source venv/bin/activate
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 
-Install dependencies:
+---
 
-```bash
-pip install -r requirements.txt
+# 3. Frontend Setup
+
+
+Navigate to frontend:
+
+
+```powershell
+cd frontend
 ```
 
 
-Create `.env` file:
+Install packages:
 
 
-```
-OPENAI_API_KEY=your_api_key
-```
-
-
-Start backend:
-
-```bash
-python main.py
+```powershell
+npm install
 ```
 
 
-Backend runs at:
+Return to root directory:
+
+
+```powershell
+cd ..
+```
+
+
+---
+
+# 4. Start InsightDB
+
+
+Run the development script:
+
+
+```powershell
+.\start-dev.ps1
+```
+
+
+The script starts both frontend and backend services.
+
+
+---
+
+# 🌐 Application URLs
+
+
+Frontend:
+
+```
+http://localhost:5173
+```
+
+
+Backend API:
 
 ```
 http://localhost:8000
@@ -248,53 +368,19 @@ http://localhost:8000
 
 ---
 
-# 💻 Frontend Setup
-
-
-Open another terminal:
-
-
-```bash
-cd frontend
-```
-
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-
-Start frontend:
-
-```bash
-npm run dev
-```
-
-
-Frontend runs at:
-
-
-```
-http://localhost:5173
-```
-
-
----
-
-# ▶️ Using InsightDB
+# ▶️ Usage
 
 
 1. Open the frontend application
 2. Upload a CSV dataset
 3. Ask analytical questions
 4. Explore:
-   - Generated insights
-   - Charts
-   - SQL queries
-   - Python code
-   - Reports
+
+- AI-generated insights
+- Data visualizations
+- Generated SQL
+- Python analysis code
+- Reports
 
 
 ---
@@ -302,7 +388,7 @@ http://localhost:5173
 # 🔮 Future Improvements
 
 
-- Support for Excel datasets
+- Excel dataset support
 - Direct SQL database connections
 - AI-generated dashboards
 - Cloud deployment
@@ -310,7 +396,10 @@ http://localhost:5173
 - Automated machine learning recommendations
 
 
-
 ---
 
-⭐ If you like InsightDB, consider giving the repository a star!
+<div align="center">
+
+⭐ If you like InsightDB, consider giving this repository a star!
+
+</div>
