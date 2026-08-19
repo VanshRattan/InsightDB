@@ -1,327 +1,681 @@
-<div align="center">
+```html
+<!DOCTYPE html>
+<html>
 
-# 🤖 DataAgent Pro
+<head>
+<title>InsightDB - AI Powered Data Analysis Platform</title>
+</head>
 
-### Stateful Multi-Agent Data Analysis with LangGraph
+<body>
 
-> **An Agentic AI Data Analysis System for Reliable Analytical Workflows**
+<h1 align="center">
+🚀 InsightDB
+</h1>
 
-Analyze CSV datasets using natural language through a **stateful LangGraph workflow** that combines **LLM reasoning**, **deterministic execution**, **safe validation**, and **interactive visualizations**.
+<h2 align="center">
+AI-Powered Conversational Data Analysis Platform
+</h2>
 
-Generate grounded analytical insights with validated SQL, Python execution, and persistent conversational memory.
-
-<br>
-
-![Python](https://img.shields.io/badge/PYTHON-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FASTAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/REACT-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![LangGraph](https://img.shields.io/badge/LANGGRAPH-000000?style=for-the-badge)
-![AGENTIC AI](https://img.shields.io/badge/AGENTIC_AI-8A2BE2?style=for-the-badge)
-![DuckDB](https://img.shields.io/badge/DUCKDB-FFF000?style=for-the-badge&logo=duckdb&logoColor=black)
-![PostgreSQL](https://img.shields.io/badge/POSTGRESQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-
-<br>
-
-![Plotly](https://img.shields.io/badge/PLOTLY-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
-![MCP](https://img.shields.io/badge/MCP-FF6B35?style=for-the-badge)
-![DuckDB](https://img.shields.io/badge/SQL-DUCKDB-FACC15?style=for-the-badge)
-![Docker](https://img.shields.io/badge/DOCKER-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![MIT](https://img.shields.io/badge/LICENSE-MIT-97CA00?style=for-the-badge)
-
-</div>
-
----
-
-# 📸 Product Preview
-
-The following screenshots demonstrate the complete workflow—from dataset upload and conversational analysis to validated results, interactive visualizations, generated SQL, and execution analytics.
-
-
-## 1️⃣ Dataset Upload
-
-Upload a CSV dataset to start a new analysis session. The agent automatically profiles the dataset, identifies its schema, and prepares it for downstream analytical tasks.
-<p align="center">
-  <img src="./screenshots/Dataset Uploading Page.png" width="90%">
-</p>
-
----
-
-## 2️⃣ Main Analysis Workspace
-
-The primary workspace where users ask analytical questions in natural language. The agent plans the workflow, generates SQL or Python when required, validates execution, and presents grounded analytical results in real time.
-<p align="center">
-  <img src="./screenshots/Main Workspace.png" width="90%">
-</p>
-
----
-
-## 3️⃣ Example Analysis — Monthly Sales Trend
-
-A complete analytical report including:
-
-- Executive Summary
-- Query Results
-- Interactive Visualization
-- Statistical Insights
 
 <p align="center">
-  <img src="./screenshots/q1.jpg" width="90%">
+<img src="assets/insightdb-banner.png" width="900">
 </p>
 
----
-
-## 4️⃣ Conversational Follow-up Analysis
-
-The agent maintains conversation state using LangGraph checkpointing, allowing follow-up questions without re-uploading the dataset.
-
-Example:
-
-> "Show the top 3"
-
-The system automatically understands the previous analytical context.
 
 <p align="center">
-  <img src="./screenshots/q2.png" width="90%">
+<b>
+Ask questions. Analyze data. Generate insights using natural language.
+</b>
 </p>
 
----
-
-## 5️⃣ Explainable AI & Debug Information
-
-Every analytical result is fully transparent.
-
-The agent exposes:
-
-- Generated SQL
-- LLM reasoning
-- Execution plan
-- Runtime metadata
-
-allowing users to inspect exactly how every answer was produced.
 
 <p align="center">
-  <img src="./screenshots/Q 4.2.png" width="90%">
+
+<img src="https://img.shields.io/badge/Frontend-React-blue">
+<img src="https://img.shields.io/badge/Language-TypeScript-blue">
+<img src="https://img.shields.io/badge/Backend-Python-yellow">
+<img src="https://img.shields.io/badge/AI-LangGraph-purple">
+<img src="https://img.shields.io/badge/Database-DuckDB-orange">
+<img src="https://img.shields.io/badge/Visualization-Plotly-green">
+
 </p>
 
----
 
-## 6️⃣ Analytics & Observability Dashboard
+<hr>
 
-The built-in analytics dashboard tracks system performance, execution latency, retry rates, recovery statistics, and historical execution metrics for monitoring agent behavior.
+
+<h1>📌 Overview</h1>
+
+
+<p>
+<b>InsightDB</b> is an AI-powered conversational analytics platform that allows users to analyze datasets using natural language instead of manually writing SQL queries or Python scripts.
+</p>
+
+
+<p>
+Users can upload CSV files and ask questions like:
+</p>
+
+
+<ul>
+
+<li>Show monthly sales trends</li>
+
+<li>Find top customers by revenue</li>
+
+<li>Calculate correlation between sales and quantity</li>
+
+<li>Detect unusual sales values</li>
+
+<li>Compare sales performance by region</li>
+
+</ul>
+
+
+<p>
+InsightDB understands user intent, performs analysis, generates visualizations, and provides explainable reports.
+</p>
+
+
+
+<h1>🎥 Application Demo</h1>
+
 
 <p align="center">
-  <img src="./screenshots/Analystics.png" width="90%">
+
+<img src="assets/demo.gif" width="850">
+
 </p>
 
----
 
-## ⚡ Why This Project is Different
 
-Many AI data analysis tools primarily generate SQL or Python using an LLM and return the result directly. DataAgent Pro combines **LLM reasoning** with **deterministic execution**, **stateful workflows**, and **validation pipelines** to produce more reliable analytical results.
+<h1>✨ Features</h1>
 
-| Capability | Typical AI Data Assistant | DataAgent Pro |
-| :--- | :--- | :--- |
-| **Workflow** | Single-step LLM response | **Stateful LangGraph multi-agent workflow** |
-| **Calculations** | Performed or generated by the LLM | **Executed deterministically using DuckDB, Pandas & NumPy** |
-| **Conversation Memory** | Limited chat history | **Persistent LangGraph checkpoints with PostgreSQL** |
-| **Error Recovery** | Stops on failures | **Validation, reflection, and automatic retries** |
-| **Execution Safety** | Limited validation | **SQL validation and Python AST security checks** |
-| **Explainability** | Final answer only | **Generated SQL, execution plan, reasoning, and reports** |
-| **Observability** | Minimal execution visibility | **Pipeline timeline, execution metrics, and analytics dashboard** |
-| **Tool Integration** | Direct tool calls | **MCP-based tool architecture with fallback support** |
 
----
+<h2>📂 Dataset Upload & Profiling</h2>
 
-## 🛠️ Core Engineering Highlights
 
-- **LangGraph Supervisor** – Routes requests to specialized workers for modular execution.
-- **Persistent Memory** – PostgreSQL checkpoints preserve conversation state across sessions.
-- **Safe Code Execution** – SQL validation and Python AST checks improve reliability and security.
-- **MCP Tool Integration** – Analytical capabilities are exposed through Model Context Protocol with automatic fallback to local implementations.
-- **Grounded AI Reports** – The LLM explains deterministic results instead of generating numbers.
-- **Session Isolation** – Each analysis runs in an independent DuckDB session with automatic cleanup.
+<ul>
 
----
+<li>Upload CSV datasets</li>
 
-## 🏗️ System Architecture
+<li>Create isolated dataset sessions</li>
 
-DataAgent Pro follows a **stateful multi-agent architecture** built with **LangGraph**. A central Supervisor coordinates specialized workers for planning, execution, validation, visualization, and reporting, while PostgreSQL preserves workflow state across sessions.
+<li>Load data into DuckDB</li>
 
-<p align="center">
-  <img src="./screenshots/System Architecture.png" alt="System Architecture" width="90%">
+<li>Automatically detect columns and data types</li>
+
+<li>Generate dataset statistics</li>
+
+</ul>
+
+
+<img src="assets/data-profile.png" width="650">
+
+
+
+<hr>
+
+
+
+<h1>🤖 Multi-Agent AI Architecture</h1>
+
+
+<p>
+InsightDB uses a LangGraph-based multi-agent architecture where every agent performs a specialized task.
 </p>
 
----
 
-## 🔁 Validation, Reflection & Retry Loop
+<img src="assets/agent-workflow.png" width="850">
 
-Every generated SQL or Python script is validated before execution. If validation fails or the results are unreliable, the system automatically reflects on the failure, regenerates the query, and retries execution. After the retry limit is reached, it returns a structured failure report instead of an incorrect response.
 
-<p align="center">
-  <img src="./screenshots/Validation.png" alt="Validation Reflection Retry Loop" width="90%">
+
+<h2>Agent Workflow</h2>
+
+
+<pre>
+
+User Question
+
+      |
+
+Supervisor Agent
+
+      |
+
+----------------------------
+
+|          |              |
+
+Schema   Planner       Analysis
+
+Agent    Agent         Agent
+
+
+      |
+
+Code Generator
+
+      |
+
+Sandbox Executor
+
+      |
+
+Validator
+
+      |
+
+Visualization Agent
+
+      |
+
+Report Generator
+
+      |
+
+Final Response
+
+
+</pre>
+
+
+
+
+<h1>🧠 AI Agents</h1>
+
+
+<h2>Supervisor Agent</h2>
+
+<p>
+Routes user requests to the required analytical workflow.
 </p>
 
----
+
+<h2>Schema Profiler</h2>
+
+<p>
+Understands dataset structure:
+</p>
 
 
-## 🛡️ Safe Execution
+<ul>
 
-Generated SQL and Python code are validated before execution.
+<li>Columns</li>
+<li>Data Types</li>
+<li>Rows</li>
+<li>Statistics</li>
 
-- SQL validation prevents common query errors.
-- Python AST validation blocks unsafe imports and dangerous functions.
-- Code runs inside isolated subprocesses with execution timeouts for safer execution.
+</ul>
 
-## 📊 Observability
 
-The system records execution metrics and workflow traces, allowing users to monitor:
 
-- Execution success rate
-- Retry and recovery statistics
-- Execution timeline
-- System performance metrics
+<h2>Planner Agent</h2>
 
-These insights are displayed through an integrated analytics dashboard.
+<p>
+Creates a step-by-step execution strategy before analysis.
+</p>
 
----
 
-## 📦 Tech Stack
 
-| Category | Technologies |
-| :--- | :--- |
-| **Frontend** | React, TypeScript, Tailwind CSS, Vite |
-| **Backend** | FastAPI, Python |
-| **AI Framework** | LangGraph, LangChain |
-| **LLMs** | Groq (Llama 3.3 70B), Gemini 2.5 Flash |
-| **Database** | PostgreSQL, DuckDB |
-| **Data Processing** | Pandas, NumPy |
-| **Visualization** | Plotly |
-| **Reporting** | ReportLab |
-| **Tool Integration** | Model Context Protocol (MCP) |
+<h2>Code Generation Agent</h2>
 
----
+<p>
+Generates:
+</p>
 
-## 📂 Project Structure
 
-```text
-autonomous-data-analyst-agent/
+<ul>
+
+<li>SQL queries</li>
+<li>Python analysis scripts</li>
+<li>Pandas operations</li>
+
+</ul>
+
+
+
+
+<h2>Sandbox Executor</h2>
+
+<p>
+Executes generated code safely with:
+</p>
+
+
+<ul>
+
+<li>Timeout limits</li>
+<li>Memory restrictions</li>
+<li>Process isolation</li>
+
+</ul>
+
+
+
+<h2>Validator Agent</h2>
+
+<p>
+Checks generated code and analysis results before returning output.
+</p>
+
+
+
+<h2>Reflection Agent</h2>
+
+<p>
+Automatically fixes failures by regenerating and retrying analysis.
+</p>
+
+
+
+
+<h1>📊 Visualization Engine</h1>
+
+
+<img src="assets/charts.png" width="750">
+
+
+<p>
+InsightDB automatically generates:
+</p>
+
+
+<table border="1">
+
+<tr>
+<th>Analysis</th>
+<th>Visualization</th>
+</tr>
+
+
+<tr>
+<td>Trends</td>
+<td>Line Chart</td>
+</tr>
+
+
+<tr>
+<td>Comparison</td>
+<td>Bar Chart</td>
+</tr>
+
+
+<tr>
+<td>Relationships</td>
+<td>Scatter Plot</td>
+</tr>
+
+
+<tr>
+<td>Distribution</td>
+<td>Histogram</td>
+</tr>
+
+
+<tr>
+<td>Outliers</td>
+<td>Box Plot</td>
+</tr>
+
+
+</table>
+
+
+
+
+<h1>💬 Conversational Memory</h1>
+
+
+<p>
+InsightDB remembers previous conversations using LangGraph state management.
+</p>
+
+
+<pre>
+
+User:
+Show top 10 customers by sales
+
+
+InsightDB:
+Returns top customers
+
+
+User:
+Show only top 3
+
+
+InsightDB:
+Updates previous analysis
+
+
+</pre>
+
+
+
+<h1>📑 Automated Reports</h1>
+
+
+<img src="assets/report.png" width="750">
+
+
+<p>
+Generated reports contain:
+</p>
+
+
+<ul>
+
+<li>Summary insights</li>
+
+<li>Query interpretation</li>
+
+<li>Data tables</li>
+
+<li>Statistics</li>
+
+<li>Visualizations</li>
+
+<li>Recommendations</li>
+
+</ul>
+
+
+
+<h1>🔍 Explainability</h1>
+
+
+<img src="assets/explainability.png" width="750">
+
+
+<ul>
+
+<li>Generated SQL</li>
+
+<li>Generated Python Code</li>
+
+<li>Execution Results</li>
+
+<li>Validation Status</li>
+
+<li>Workflow Logs</li>
+
+<li>Runtime Metrics</li>
+
+</ul>
+
+
+
+<h1>🏗️ System Architecture</h1>
+
+
+<img src="assets/system-architecture.png" width="900">
+
+
+
+<pre>
+
+             User
+
+              |
+
+       React Frontend
+
+              |
+
+          Backend API
+
+              |
+
+       LangGraph Engine
+
+              |
+
+ --------------------------------
+
+ |              |               |
+
+DuckDB       Python        Visualization
+
+Database     Analysis        Engine
+
+
+              |
+
+          Reports
+
+
+</pre>
+
+
+
+
+<h1>🛠️ Technology Stack</h1>
+
+
+<h2>Frontend</h2>
+
+
+<ul>
+
+<li>React</li>
+<li>TypeScript</li>
+<li>Vite</li>
+<li>Tailwind CSS</li>
+<li>Plotly</li>
+
+</ul>
+
+
+
+<h2>Backend</h2>
+
+
+<ul>
+
+<li>Python</li>
+<li>LangGraph</li>
+<li>DuckDB</li>
+<li>Pandas</li>
+<li>NumPy</li>
+<li>PostgreSQL</li>
+
+</ul>
+
+
+
+<h1>📂 Project Structure</h1>
+
+
+<pre>
+
+InsightDB
+
 │
-├── backend/          # FastAPI + LangGraph workflow
-├── frontend/         # React application
-├── screenshots/      # README images
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
-```
+├── frontend
+│
+├── backend
+│
+│── agents
+│   ├── supervisor
+│   ├── planner
+│   ├── validator
+│   └── reporter
+│
+├── database
+│
+├── execution
+│
+├── assets
+│
+└── README.html
 
----
 
-## 🚀 Getting Started
+</pre>
 
-### 1. Clone the Repository
 
-```bash
-git clone <repository-url>
-cd autonomous-data-analyst-agent
-```
 
-### 2. Optional: Start PostgreSQL
 
-```bash
-docker-compose up -d
-```
+<h1>🚀 Installation & Running</h1>
 
-PostgreSQL is optional. Without Docker, the app uses in-memory sessions and LangGraph checkpoints. To explicitly enable PostgreSQL, set `POSTGRES_ENABLED=true` in `.env`.
 
-### 3. Backend Setup
+<h2>Prerequisites</h2>
 
-```bash
-python -m venv .venv
 
-# Activate environment
-# Windows
-.venv\Scripts\activate
+<ul>
 
-# Linux / macOS
-source .venv/bin/activate
+<li>Python 3.10+</li>
+
+<li>Node.js 18+</li>
+
+<li>npm</li>
+
+<li>Git</li>
+
+</ul>
+
+
+
+<h2>Clone Repository</h2>
+
+
+<pre>
+
+git clone https://github.com/yourusername/InsightDB.git
+
+cd InsightDB
+
+</pre>
+
+
+
+<h2>Backend Setup</h2>
+
+
+<pre>
+
+cd backend
+
+python -m venv venv
 
 pip install -r requirements.txt
 
-cp .env.example .env
-```
+python main.py
 
-Configure your API keys inside `.env`.
+</pre>
 
-Start the backend:
 
-```bash
-uvicorn backend.main:app --reload
-```
 
-### 4. Frontend Setup
 
-```bash
+<h2>Frontend Setup</h2>
+
+
+<pre>
+
 cd frontend
 
 npm install
 
 npm run dev
+
+</pre>
+
+
+
+<h2>Application URLs</h2>
+
+
+<pre>
+
+Frontend:
+http://localhost:5173
+
+
+Backend:
+http://localhost:8000
+
+
+API Docs:
+http://localhost:8000/docs
+
+</pre>
+
+
+
+
+<h1>🐳 Docker Setup</h1>
+
+
+<pre>
+
+docker-compose build
+
+docker-compose up
+
+</pre>
+
+
+
+<h1>🔐 Security</h1>
+
+
+<ul>
+
+<li>Dataset isolation</li>
+
+<li>Controlled execution environment</li>
+
+<li>Code validation</li>
+
+<li>Memory limits</li>
+
+<li>Failure recovery</li>
+
+</ul>
+
+
+
+
+<h1>🔮 Future Improvements</h1>
+
+
+<ul>
+
+<li>Excel support</li>
+
+<li>SQL database connectors</li>
+
+<li>AI dashboards</li>
+
+<li>Voice analytics</li>
+
+<li>Cloud deployment</li>
+
+<li>Multi-user collaboration</li>
+
+</ul>
+
+
+
+
+<h1>👨‍💻 Author</h1>
+
+
+<p>
+<b>Your Name</b>
+<br>
+Computer Science Engineering Student
+</p>
+
+
+
+<h2 align="center">
+⭐ If you like InsightDB, consider starring the repository!
+</h2>
+
+
+</body>
+
+</html>
 ```
-
-Open:
-
-- Frontend → `http://localhost:5173`
-- Backend → `http://localhost:8000`
-
-On Windows, you can start both services without Docker from the project root:
-
-```powershell
-.\start-dev.ps1
-```
-
----
-
-## 💬 Example Queries
-
-- "Show the top 7 customers by total sales."
-- "Show monthly sales trends."
-- "Calculate the correlation between sales and quantity."
-- "Detect outliers in sales."
-- "Show the percentage contribution by deal size."
-
----
-
-## 🔒 Limitations
-
-- Supports CSV datasets only.
-- Python code runs inside subprocess-based sandboxes rather than containers.
-- MCP communication currently uses local stdio transport.
-
----
-
-
-## ⭐ Key Takeaways
-
-This project demonstrates practical AI engineering concepts including:
-
-- Multi-agent orchestration with LangGraph
-- Stateful workflows and checkpointing
-- Safe SQL and Python execution
-- MCP-based tool integration
-- Reflection and retry mechanisms
-- Interactive analytics and reporting
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
-
-## 👨‍💻 Author
-
-**Chetan VK**
-
-B.Tech in Artificial Intelligence & Data Science
-#   I n s i g h t D B  
- #   I n s i g h t D B  
- 
