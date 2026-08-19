@@ -1,345 +1,309 @@
-```html
-<!DOCTYPE html>
-<html>
-
-<head>
-<title>InsightDB - AI Powered Data Analysis Platform</title>
-</head>
-
-<body>
-
-<h1 align="center">
-🚀 InsightDB
-</h1>
-
-<h2 align="center">
-AI-Powered Conversational Data Analysis Platform
-</h2>
-
+# 🚀 InsightDB  
+## AI-Powered Conversational Data Analysis Platform
 
 <p align="center">
 <img src="assets/insightdb-banner.png" width="900">
 </p>
 
-
 <p align="center">
-<b>
-Ask questions. Analyze data. Generate insights using natural language.
-</b>
+<b>Ask questions. Analyze data. Generate insights using natural language.</b>
 </p>
-
 
 <p align="center">
 
-<img src="https://img.shields.io/badge/Frontend-React-blue">
-<img src="https://img.shields.io/badge/Language-TypeScript-blue">
-<img src="https://img.shields.io/badge/Backend-Python-yellow">
-<img src="https://img.shields.io/badge/AI-LangGraph-purple">
-<img src="https://img.shields.io/badge/Database-DuckDB-orange">
-<img src="https://img.shields.io/badge/Visualization-Plotly-green">
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue)
+![Python](https://img.shields.io/badge/Backend-Python-yellow)
+![LangGraph](https://img.shields.io/badge/AI-LangGraph-purple)
+![DuckDB](https://img.shields.io/badge/Database-DuckDB-orange)
+![Plotly](https://img.shields.io/badge/Visualization-Plotly-green)
 
 </p>
 
 
-<hr>
+---
+
+# 📌 Overview
+
+InsightDB is an AI-powered conversational data analytics platform that allows users to analyze datasets using natural language instead of manually writing SQL queries or Python scripts.
+
+Users can upload CSV files and ask analytical questions such as:
+
+```
+Show monthly sales trends.
+
+Find the top customers by revenue.
+
+Calculate correlation between sales and quantity.
+
+Detect unusual sales values.
+
+Compare sales performance by region.
+```
+
+InsightDB understands the user's intent, performs the required analysis, generates visualizations, and provides explainable analytical reports.
+
+The platform combines:
+
+- Large Language Models
+- Multi-Agent AI Workflows
+- DuckDB Analytical Processing
+- Python Statistical Analysis
+- Automated Visualization Generation
 
 
-<h1>📌 Overview</h1>
+---
 
-
-<p>
-<b>InsightDB</b> is an AI-powered conversational analytics platform that allows users to analyze datasets using natural language instead of manually writing SQL queries or Python scripts.
-</p>
-
-
-<p>
-Users can upload CSV files and ask questions like:
-</p>
-
-
-<ul>
-
-<li>Show monthly sales trends</li>
-
-<li>Find top customers by revenue</li>
-
-<li>Calculate correlation between sales and quantity</li>
-
-<li>Detect unusual sales values</li>
-
-<li>Compare sales performance by region</li>
-
-</ul>
-
-
-<p>
-InsightDB understands user intent, performs analysis, generates visualizations, and provides explainable reports.
-</p>
-
-
-
-<h1>🎥 Application Demo</h1>
-
+# 🎥 Application Preview
 
 <p align="center">
-
 <img src="assets/demo.gif" width="850">
-
 </p>
 
 
+Workflow:
 
-<h1>✨ Features</h1>
+```
+Upload CSV Dataset
+          |
+          ↓
+Dataset Profiling
+          |
+          ↓
+Ask Natural Language Question
+          |
+          ↓
+AI Agent Analysis
+          |
+          ↓
+Generated SQL / Python Code
+          |
+          ↓
+Visualization
+          |
+          ↓
+Analytical Report
+```
 
 
-<h2>📂 Dataset Upload & Profiling</h2>
+---
+
+# ✨ Features
 
 
-<ul>
+## 📂 Dataset Upload & Profiling
 
-<li>Upload CSV datasets</li>
+InsightDB allows users to upload CSV datasets and automatically understands their structure.
 
-<li>Create isolated dataset sessions</li>
+Features:
 
-<li>Load data into DuckDB</li>
+- Dataset isolation using sessions
+- Automatic column detection
+- Data type identification
+- Row count analysis
+- Statistical profiling
+- DuckDB-based storage
 
-<li>Automatically detect columns and data types</li>
 
-<li>Generate dataset statistics</li>
-
-</ul>
-
-
+<p align="center">
 <img src="assets/data-profile.png" width="650">
-
-
-
-<hr>
-
-
-
-<h1>🤖 Multi-Agent AI Architecture</h1>
-
-
-<p>
-InsightDB uses a LangGraph-based multi-agent architecture where every agent performs a specialized task.
 </p>
 
 
+---
+
+# 🤖 Multi-Agent AI Architecture
+
+InsightDB uses a LangGraph-based multi-agent workflow instead of a single LLM response.
+
+<p align="center">
 <img src="assets/agent-workflow.png" width="850">
-
-
-
-<h2>Agent Workflow</h2>
-
-
-<pre>
-
-User Question
-
-      |
-
-Supervisor Agent
-
-      |
-
-----------------------------
-
-|          |              |
-
-Schema   Planner       Analysis
-
-Agent    Agent         Agent
-
-
-      |
-
-Code Generator
-
-      |
-
-Sandbox Executor
-
-      |
-
-Validator
-
-      |
-
-Visualization Agent
-
-      |
-
-Report Generator
-
-      |
-
-Final Response
-
-
-</pre>
-
-
-
-
-<h1>🧠 AI Agents</h1>
-
-
-<h2>Supervisor Agent</h2>
-
-<p>
-Routes user requests to the required analytical workflow.
 </p>
 
 
-<h2>Schema Profiler</h2>
-
-<p>
-Understands dataset structure:
-</p>
+## AI Agent Workflow
 
 
-<ul>
+```mermaid
+flowchart TD
 
-<li>Columns</li>
-<li>Data Types</li>
-<li>Rows</li>
-<li>Statistics</li>
+A[User Question]
 
-</ul>
+A --> B[Supervisor Agent]
 
+B --> C[Schema Profiler]
 
+B --> D[Planner Agent]
 
-<h2>Planner Agent</h2>
+D --> E[Code Generator]
 
-<p>
-Creates a step-by-step execution strategy before analysis.
-</p>
+E --> F[Sandbox Executor]
 
+F --> G[Validator Agent]
 
+G --> H[Reflection Agent]
 
-<h2>Code Generation Agent</h2>
+G --> I[Visualization Agent]
 
-<p>
-Generates:
-</p>
+I --> J[Report Generator]
 
-
-<ul>
-
-<li>SQL queries</li>
-<li>Python analysis scripts</li>
-<li>Pandas operations</li>
-
-</ul>
+J --> K[Final Response]
+```
 
 
+---
+
+# 🧠 AI Agents
 
 
-<h2>Sandbox Executor</h2>
+## Supervisor Agent
 
-<p>
-Executes generated code safely with:
-</p>
+Determines which analytical capability is required.
 
+Example:
 
-<ul>
+```
+User:
+Show monthly revenue growth
 
-<li>Timeout limits</li>
-<li>Memory restrictions</li>
-<li>Process isolation</li>
-
-</ul>
-
+Supervisor:
+Trend Analysis Required
+```
 
 
-<h2>Validator Agent</h2>
+---
 
-<p>
-Checks generated code and analysis results before returning output.
-</p>
+## Schema Profiler
 
+Understands the uploaded dataset:
 
-
-<h2>Reflection Agent</h2>
-
-<p>
-Automatically fixes failures by regenerating and retrying analysis.
-</p>
+- Column names
+- Data types
+- Number of rows
+- Missing values
+- Statistical properties
 
 
+---
+
+## Planner Agent
+
+Creates an analysis strategy before execution.
+
+Example:
+
+```
+Question:
+Which region generated maximum revenue?
 
 
-<h1>📊 Visualization Engine</h1>
+Plan:
+
+1. Identify revenue column
+2. Group data by region
+3. Calculate total revenue
+4. Sort results
+5. Generate visualization
+```
 
 
+---
+
+## Code Generator Agent
+
+Generates executable:
+
+- SQL queries
+- Python scripts
+- Pandas operations
+- Statistical calculations
+
+
+---
+
+## Sandbox Executor
+
+Executes generated Python code securely using:
+
+- Process isolation
+- Timeout limits
+- Memory restrictions
+- Execution validation
+
+
+---
+
+## Validator Agent
+
+Validates:
+
+- Generated code
+- SQL queries
+- Execution output
+- Analytical results
+
+
+---
+
+## Reflection Agent
+
+Automatically handles failures.
+
+Workflow:
+
+```
+Execution Failure
+        |
+        ↓
+Failure Analysis
+        |
+        ↓
+Code Regeneration
+        |
+        ↓
+Retry Execution
+```
+
+
+---
+
+# 📊 Visualization Engine
+
+
+<p align="center">
 <img src="assets/charts.png" width="750">
-
-
-<p>
-InsightDB automatically generates:
 </p>
 
 
-<table border="1">
-
-<tr>
-<th>Analysis</th>
-<th>Visualization</th>
-</tr>
+InsightDB automatically selects suitable visualizations.
 
 
-<tr>
-<td>Trends</td>
-<td>Line Chart</td>
-</tr>
+| Analysis Type | Visualization |
+|---|---|
+| Time Trends | Line Chart |
+| Category Comparison | Bar Chart |
+| Relationship Analysis | Scatter Plot |
+| Distribution | Histogram |
+| Outlier Detection | Box Plot |
+| Contribution Analysis | Pie Chart |
 
 
-<tr>
-<td>Comparison</td>
-<td>Bar Chart</td>
-</tr>
+---
+
+# 💬 Conversational Memory
+
+InsightDB supports follow-up questions using LangGraph state management.
 
 
-<tr>
-<td>Relationships</td>
-<td>Scatter Plot</td>
-</tr>
+Example:
 
-
-<tr>
-<td>Distribution</td>
-<td>Histogram</td>
-</tr>
-
-
-<tr>
-<td>Outliers</td>
-<td>Box Plot</td>
-</tr>
-
-
-</table>
-
-
-
-
-<h1>💬 Conversational Memory</h1>
-
-
-<p>
-InsightDB remembers previous conversations using LangGraph state management.
-</p>
-
-
-<pre>
-
+```
 User:
 Show top 10 customers by sales
 
 
 InsightDB:
-Returns top customers
+Returns top 10 customers
 
 
 User:
@@ -348,334 +312,461 @@ Show only top 3
 
 InsightDB:
 Updates previous analysis
+```
 
 
-</pre>
+The system understands context from previous conversations.
 
 
+---
 
-<h1>📑 Automated Reports</h1>
+# 📑 Automated Reports
 
 
+<p align="center">
 <img src="assets/report.png" width="750">
-
-
-<p>
-Generated reports contain:
 </p>
 
 
-<ul>
+Generated reports include:
 
-<li>Summary insights</li>
-
-<li>Query interpretation</li>
-
-<li>Data tables</li>
-
-<li>Statistics</li>
-
-<li>Visualizations</li>
-
-<li>Recommendations</li>
-
-</ul>
+- Query interpretation
+- Summary insights
+- Data tables
+- Statistical findings
+- Visualizations
+- Recommendations
 
 
+Reports can optionally be exported as PDF.
 
-<h1>🔍 Explainability</h1>
+
+---
+
+# 🔍 Explainability & Observability
 
 
+<p align="center">
 <img src="assets/explainability.png" width="750">
+</p>
 
 
-<ul>
+InsightDB makes every analysis transparent.
 
-<li>Generated SQL</li>
+Users can inspect:
 
-<li>Generated Python Code</li>
-
-<li>Execution Results</li>
-
-<li>Validation Status</li>
-
-<li>Workflow Logs</li>
-
-<li>Runtime Metrics</li>
-
-</ul>
+✅ Generated SQL  
+✅ Generated Python Code  
+✅ Execution Results  
+✅ Validation Status  
+✅ Retry Information  
+✅ Workflow Execution Trace  
+✅ Runtime Metrics  
+✅ Historical Reports  
 
 
+---
 
-<h1>🏗️ System Architecture</h1>
+# 🏗️ System Architecture
 
 
+<p align="center">
 <img src="assets/system-architecture.png" width="900">
+</p>
 
 
+Architecture:
 
-<pre>
+```
+                  User
 
-             User
+                   |
 
-              |
+            React Frontend
 
-       React Frontend
+                   |
 
-              |
+              Backend API
 
-          Backend API
+                   |
 
-              |
+            LangGraph Engine
 
-       LangGraph Engine
+                   |
 
-              |
+        ----------------------
 
- --------------------------------
+        |          |          |
 
- |              |               |
+      SQL      Python    Visualization
 
-DuckDB       Python        Visualization
-
-Database     Analysis        Engine
-
-
-              |
-
-          Reports
+     Agent     Agent        Agent
 
 
-</pre>
+                   |
+
+             Report Generator
+
+                   |
+
+              Final Response
+```
 
 
+---
+
+# 🛠️ Technology Stack
 
 
-<h1>🛠️ Technology Stack</h1>
+## Frontend
+
+| Technology | Purpose |
+|---|---|
+| React | UI Framework |
+| TypeScript | Type Safety |
+| Vite | Build Tool |
+| Tailwind CSS | Styling |
+| Plotly | Interactive Visualization |
 
 
-<h2>Frontend</h2>
+## Backend
+
+| Technology | Purpose |
+|---|---|
+| Python | Backend Logic |
+| LangGraph | AI Agent Workflow |
+| DuckDB | Analytical Database |
+| Pandas | Data Processing |
+| NumPy | Numerical Analysis |
+| PostgreSQL | Persistent Storage |
 
 
-<ul>
+---
 
-<li>React</li>
-<li>TypeScript</li>
-<li>Vite</li>
-<li>Tailwind CSS</li>
-<li>Plotly</li>
-
-</ul>
+# 📂 Project Structure
 
 
-
-<h2>Backend</h2>
-
-
-<ul>
-
-<li>Python</li>
-<li>LangGraph</li>
-<li>DuckDB</li>
-<li>Pandas</li>
-<li>NumPy</li>
-<li>PostgreSQL</li>
-
-</ul>
-
-
-
-<h1>📂 Project Structure</h1>
-
-
-<pre>
-
+```
 InsightDB
 
 │
 ├── frontend
+│   ├── src
+│   ├── components
+│   ├── pages
+│   └── charts
 │
 ├── backend
 │
-│── agents
-│   ├── supervisor
-│   ├── planner
-│   ├── validator
-│   └── reporter
-│
-├── database
-│
-├── execution
+│   ├── agents
+│   │   ├── supervisor
+│   │   ├── planner
+│   │   ├── validator
+│   │   ├── visualization
+│   │   └── reporter
+│   │
+│   ├── database
+│   ├── execution
+│   └── analytics
 │
 ├── assets
 │
-└── README.html
+└── README.md
+```
 
 
-</pre>
+---
+
+# 🚀 Installation & Running
 
 
+## Prerequisites
+
+Install:
+
+- Python >= 3.10
+- Node.js >= 18
+- npm
+- Git
 
 
-<h1>🚀 Installation & Running</h1>
+Check versions:
+
+```bash
+python --version
+
+node --version
+
+npm --version
+```
 
 
-<h2>Prerequisites</h2>
+---
+
+# 1. Clone Repository
 
 
-<ul>
-
-<li>Python 3.10+</li>
-
-<li>Node.js 18+</li>
-
-<li>npm</li>
-
-<li>Git</li>
-
-</ul>
-
-
-
-<h2>Clone Repository</h2>
-
-
-<pre>
-
+```bash
 git clone https://github.com/yourusername/InsightDB.git
 
 cd InsightDB
-
-</pre>
-
+```
 
 
-<h2>Backend Setup</h2>
+---
+
+# 2. Backend Setup
 
 
-<pre>
-
+```bash
 cd backend
+```
 
+
+Create virtual environment:
+
+
+### Windows
+
+```bash
 python -m venv venv
 
+venv\Scripts\activate
+```
+
+
+### Linux / Mac
+
+```bash
+python3 -m venv venv
+
+source venv/bin/activate
+```
+
+
+Install dependencies:
+
+```bash
 pip install -r requirements.txt
+```
 
+
+---
+
+# 3. Environment Variables
+
+
+Create:
+
+```
+backend/.env
+```
+
+
+Example:
+
+```env
+OPENAI_API_KEY=your_api_key
+
+DATABASE_URL=postgresql://username:password@localhost:5432/insightdb
+
+MAX_EXECUTION_TIME=30
+
+MAX_MEMORY_LIMIT=512
+```
+
+
+---
+
+# 4. Start Backend
+
+
+```bash
 python main.py
-
-</pre>
-
+```
 
 
+or:
 
-<h2>Frontend Setup</h2>
-
-
-<pre>
-
-cd frontend
-
-npm install
-
-npm run dev
-
-</pre>
-
-
-
-<h2>Application URLs</h2>
-
-
-<pre>
-
-Frontend:
-http://localhost:5173
+```bash
+uvicorn main:app --reload
+```
 
 
 Backend:
-http://localhost:8000
 
-
-API Docs:
-http://localhost:8000/docs
-
-</pre>
-
-
-
-
-<h1>🐳 Docker Setup</h1>
-
-
-<pre>
-
-docker-compose build
-
-docker-compose up
-
-</pre>
-
-
-
-<h1>🔐 Security</h1>
-
-
-<ul>
-
-<li>Dataset isolation</li>
-
-<li>Controlled execution environment</li>
-
-<li>Code validation</li>
-
-<li>Memory limits</li>
-
-<li>Failure recovery</li>
-
-</ul>
-
-
-
-
-<h1>🔮 Future Improvements</h1>
-
-
-<ul>
-
-<li>Excel support</li>
-
-<li>SQL database connectors</li>
-
-<li>AI dashboards</li>
-
-<li>Voice analytics</li>
-
-<li>Cloud deployment</li>
-
-<li>Multi-user collaboration</li>
-
-</ul>
-
-
-
-
-<h1>👨‍💻 Author</h1>
-
-
-<p>
-<b>Your Name</b>
-<br>
-Computer Science Engineering Student
-</p>
-
-
-
-<h2 align="center">
-⭐ If you like InsightDB, consider starring the repository!
-</h2>
-
-
-</body>
-
-</html>
 ```
+http://localhost:8000
+```
+
+
+API Documentation:
+
+```
+http://localhost:8000/docs
+```
+
+
+---
+
+# 5. Frontend Setup
+
+
+Open another terminal:
+
+
+```bash
+cd frontend
+```
+
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+
+Create:
+
+```
+frontend/.env
+```
+
+
+Add:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+
+---
+
+# 6. Start Frontend
+
+
+```bash
+npm run dev
+```
+
+
+Frontend:
+
+```
+http://localhost:5173
+```
+
+
+---
+
+# ▶️ Running Application
+
+
+You need two terminals:
+
+
+### Backend
+
+```bash
+cd backend
+
+activate environment
+
+python main.py
+```
+
+
+### Frontend
+
+```bash
+cd frontend
+
+npm run dev
+```
+
+
+Open:
+
+```
+http://localhost:5173
+```
+
+
+---
+
+# 🐳 Docker Deployment
+
+
+Build:
+
+```bash
+docker-compose build
+```
+
+
+Run:
+
+```bash
+docker-compose up
+```
+
+
+Services:
+
+```
+Frontend:
+localhost:5173
+
+
+Backend:
+localhost:8000
+```
+
+
+---
+
+# 🔐 Security Features
+
+
+InsightDB provides:
+
+- Dataset isolation
+- Controlled code execution
+- Memory limitations
+- Timeout handling
+- Validation before execution
+- Failure recovery
+
+
+---
+
+# 🔮 Future Improvements
+
+
+- Excel file support
+- SQL database connectors
+- AI-generated dashboards
+- Voice-based analytics
+- Cloud deployment
+- Multi-user collaboration
+- Automated ML recommendations
+
+
+---
+
+# 🎯 Why InsightDB?
+
+Traditional analytics requires knowledge of:
+
+- SQL
+- Python
+- Statistics
+- Visualization tools
+
+
+InsightDB removes this complexity by allowing users to communicate with data naturally while maintaining transparency through generated code and explainable workflows.
+
+
+---
+If you like InsightDB, consider giving this repository a star ⭐
