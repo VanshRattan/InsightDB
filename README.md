@@ -3,7 +3,7 @@
 
 
 <p align="center">
-<img src="assets/insightdb-banner.png" width="800">
+  <img src="./assets/insightdb-banner.png" width="800" alt="InsightDB Banner">
 </p>
 
 
