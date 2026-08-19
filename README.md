@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-<img src="https://img.shields.io/badge/Plotly-Visualization-blue?style=for-the-badge" />
+<img src="https://img.shields.io/badge/LangGraph-AI_Agents-purple?style=for-the-badge" />
 
 </div>
 
@@ -28,7 +28,7 @@ Instead of manually writing SQL queries or Python scripts, users can simply ask 
 - "Detect unusual sales values"
 - "Compare sales performance by region"
 
-InsightDB understands user intent, performs the required analysis, generates visualizations, and provides explainable results with generated SQL/Python code.
+InsightDB understands user intent, creates an analysis workflow, generates SQL/Python code, executes the analysis, and provides explainable results.
 
 
 ---
@@ -48,6 +48,10 @@ InsightDB uses a **LangGraph-based multi-agent architecture** where different AI
 
                       ↓
 
+              Schema Profiler
+
+                      ↓
+
               Planning Agent
 
                       ↓
@@ -60,10 +64,6 @@ InsightDB uses a **LangGraph-based multi-agent architecture** where different AI
 
                       ↓
 
-          Visualization Generator
-
-                      ↓
-
              Report Generation
 
                       ↓
@@ -72,19 +72,18 @@ InsightDB uses a **LangGraph-based multi-agent architecture** where different AI
 ```
 
 
-### Agent Responsibilities
+## Agent Responsibilities
 
 
 | Agent | Purpose |
 |---|---|
 | Supervisor Agent | Determines the required analysis workflow |
-| Schema Profiler | Understands dataset structure |
+| Schema Profiler | Understands dataset structure and column relationships |
 | Planner Agent | Creates analysis strategy |
-| Code Generator | Generates SQL/Python code |
-| Sandbox Executor | Executes analysis securely |
-| Validator Agent | Checks results and errors |
-| Visualization Agent | Creates interactive charts |
-| Report Agent | Generates analytical reports |
+| Code Generator | Generates SQL/Python analysis code |
+| Sandbox Executor | Executes generated analysis securely |
+| Validator Agent | Checks results and handles errors |
+| Report Agent | Generates analytical explanations |
 
 
 ---
@@ -97,42 +96,29 @@ InsightDB uses a **LangGraph-based multi-agent architecture** where different AI
 - Upload CSV datasets
 - Automatic dataset profiling
 - Detect columns and data types
-- Analyze dataset statistics
-- Execute fast analytical queries using DuckDB
+- Generate dataset statistics
+- Execute analytical queries using DuckDB
 
 
 ---
 
 ## 🤖 Natural Language Data Analysis
 
-Users can ask questions instead of writing code.
+Users can ask questions instead of writing SQL queries or Python scripts.
 
 Example:
 
-```
+```text
 Show monthly revenue trends
 ```
 
 InsightDB automatically:
 
-- Understands the question
+- Understands user intent
 - Creates an analysis plan
 - Generates SQL/Python code
 - Executes the analysis
-- Returns insights
-
-
----
-
-## 📊 Automatic Visualization
-
-InsightDB automatically generates suitable charts:
-
-- Line charts for trends
-- Bar charts for comparisons
-- Scatter plots for relationships
-- Histograms for distributions
-- Box plots for outlier detection
+- Returns analytical insights
 
 
 ---
@@ -142,13 +128,13 @@ InsightDB automatically generates suitable charts:
 Users can inspect:
 
 - Generated SQL queries
-- Generated Python code
+- Generated Python analysis code
 - Execution results
 - Validation status
 - Analysis workflow
 
 
-This makes the generated insights transparent and reproducible.
+This makes AI-generated insights transparent and reproducible.
 
 
 ---
@@ -160,7 +146,7 @@ InsightDB supports follow-up questions using session context.
 
 Example:
 
-```
+```text
 User:
 Show top 10 customers by sales
 
@@ -173,7 +159,8 @@ User:
 Show only top 3
 ```
 
-The system understands the previous conversation and updates the analysis.
+
+The system understands previous conversation context and updates the analysis accordingly.
 
 
 ---
@@ -182,10 +169,26 @@ The system understands the previous conversation and updates the analysis.
 
 Generated Python analysis is executed with:
 
-- Validation checks
+- Code validation checks
 - Execution limits
 - Error handling
-- Retry mechanism
+- Retry mechanisms
+
+
+---
+
+## 📊 Data Analysis Results
+
+InsightDB provides structured analytical outputs including:
+
+- Dataset profiling
+- Statistical summaries
+- Query execution results
+- Generated SQL queries
+- Generated Python analysis code
+- Explainable analytical insights
+
+Visualization capabilities are planned as part of future development.
 
 
 ---
@@ -201,7 +204,6 @@ Generated Python analysis is executed with:
 | TypeScript | Type Safety |
 | Vite | Frontend Build Tool |
 | Tailwind CSS | Styling |
-| Plotly | Data Visualization |
 
 
 ## Backend
@@ -275,40 +277,50 @@ cd InsightDB
 
 # 2. Backend Setup
 
+
 ```powershell
 cd E:\InsightDB
+
 .\.venv\Scripts\Activate.ps1
+
 $env:POSTGRES_ENABLED="false"
+
 python -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
+
+---
 
 # 3. Frontend Setup
 
 
 ```powershell
 cd E:\InsightDB\frontend
+
+npm install
+
 npm run dev
 ```
 
 
 ---
 
-
-
 # ▶️ Usage
 
 
 1. Open the frontend application
+
 2. Upload a CSV dataset
+
 3. Ask analytical questions
+
 4. Explore:
 
 - AI-generated insights
-- Data visualizations
-- Generated SQL
+- Generated SQL queries
 - Python analysis code
-- Reports
+- Execution results
+- Analytical reports
 
 
 ---
@@ -316,12 +328,21 @@ npm run dev
 # 🔮 Future Improvements
 
 
+- Automatic visualization generation using Plotly
+- AI-generated interactive dashboards
 - Excel dataset support
 - Direct SQL database connections
-- AI-generated dashboards
 - Cloud deployment
 - Multi-user collaboration
 - Automated machine learning recommendations
+
+
+---
+
+# 📌 Future Vision
+
+
+InsightDB aims to become an AI-powered data analyst capable of transforming raw datasets into meaningful insights through natural language interaction, automated reasoning, and intelligent analytical workflows.
 
 
 ---
